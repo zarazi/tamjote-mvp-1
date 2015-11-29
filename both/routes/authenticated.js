@@ -22,3 +22,10 @@ authenticatedRoutes.route( '/dashboard', {
     BlazeLayout.render( 'default', { yield: 'dashboard' } );
   }
 });
+
+authenticatedRoutes.route( '/jotes', {
+  name: 'jotes',
+  action() {
+    BlazeLayout.render('default', { yield: 'jotes' } );
+  }
+});
