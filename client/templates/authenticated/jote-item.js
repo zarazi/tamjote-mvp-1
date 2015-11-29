@@ -11,7 +11,12 @@ Template.joteItem.events({
     let answers = template.data.answers;
     let correct = answers[choiceNo] === true;
 
-    console.log(choiceNo, correct);
+    let score = Session.get('_score');
+    score += correct?100:0;
+
+    Session.set('_score', score);
+
+    console.log(choiceNo, score);
 
     return false;
   }
