@@ -1,9 +1,22 @@
 <template name="jotes">
   {{#if Template.subscriptionsReady}}
-    {{#each jotes}}
-      {{> joteItem}}
-    {{/each}}
+    {{#unless noMoreJote}}
+    <div class="container-jotes">
+      {{#each jotes}}
+        {{> joteItem}}
+      {{/each}}
+    </div>
+    {{/unless}}
   {{else}}
     {{> spinner}}
+  {{/if}}
+
+  {{#if noMoreJote}}
+      <div class="jumbotron text-center replay myAnimated animated bounceInDown" style="padding: 20px;">
+          <h2>That's it!</h2>
+          <img src="/images/logo/mortar-square-alpha-tj-152.png">
+          <p>Want to try more</p>
+          <p><a class="btn btn-info retake" href="#" role="button">Retake it!</a></p>
+      </div>
   {{/if}}
 </template>

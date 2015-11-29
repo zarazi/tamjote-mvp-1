@@ -18,7 +18,12 @@ Template.joteItem.events({
     console.log(choiceNo, score);
 
     template.$('.jote').addClass('animated bounceOutUp');
-    template.$('.jote').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() { $(this).remove(); });
+    template.$('.jote').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+      $(this).remove();
+      if ($('.container-jotes').children().length===0) {
+        Session.set('_no_more_jote', true);
+      }
+    });
 
     return false;
   }
