@@ -2,8 +2,10 @@
     <div class="jumbotron text-center jote">
         <h1 class="question">{{question}}</h1>
         <p class="text-center">
-            <a class="btn btn-primary btn-lg choice" href="#" role="button">{{choice 0}}</a>
-            <a class="btn btn-warning btn-lg choice" href="#" role="button">{{choice 1}}</a>
+        {{#each choices}}
+            <a class="btn btn-{{#unless @index}}primary{{else}}warning{{/unless}} btn-lg choice"
+               href="#" role="button" data-choice-no="{{@index}}">{{this}}</a>
+        {{/each}}
         </p>
     </div>
 </template>

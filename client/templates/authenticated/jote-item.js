@@ -1,8 +1,18 @@
 Template.joteItem.helpers({
-  choice: (no) => {
-    let template = Template.instance();
-    let choices = template.data.choices;
+});
 
-    return choices[no];
+Template.joteItem.events({
+  'click .choice': (event, template) => {
+    let $allChoices = template.$('.choice');
+    $allChoices.attr('disabled', true);
+
+    let $currentChoice = template.$(event.target);
+    let choiceNo = $currentChoice.data('choice-no');
+    let answers = template.data.answers;
+    let correct = answers[choiceNo] === true;
+
+    console.log(choiceNo, correct);
+
+    return false;
   }
 });
