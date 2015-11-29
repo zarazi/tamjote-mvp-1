@@ -19,6 +19,12 @@ Template.jotes.helpers({
 Template.jotes.events({
   'click .retake': (event, template) => {
     Session.set('_no_more_jote', false);
+
+    $('.score').addClass('animated flash');
+    $('.score').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+      $(this).removeClass('animated flash');
+    });
+
     return false;
   }
 });

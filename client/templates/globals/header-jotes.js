@@ -5,6 +5,9 @@ Template.headerJotes.helpers({
   }
 });
 
-Template.headerJotes.onRendered(() => {
+Template.headerJotes.onRendered(function() {
   this.$('.score').addClass('animated flash');
+  this.$('.score').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+    $(this).removeClass('animated flash');
+  });
 });
