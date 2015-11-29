@@ -36,3 +36,10 @@ publicRoutes.route( '/reset-password/:token', {
     BlazeLayout.render( 'default', { yield: 'resetPassword' } );
   }
 });
+
+publicRoutes.route( '/jotes', {
+  name: 'public-jotes',
+  action() {
+    BlazeLayout.render('default', { yield: 'jotes' } );
+  }
+});
