@@ -1,5 +1,11 @@
 <template name="jotes">
-  {{#each jotes}}
-    {{> joteItem}}
-  {{/each}}
+  {{#if Template.subscriptionsReady}}
+    {{#each jotes}}
+      {{> joteItem}}
+    {{/each}}
+  {{else}}
+    <div class="jumbotron text-center">
+        <h1>Loading ..</h1>
+    </div>
+  {{/if}}
 </template>
