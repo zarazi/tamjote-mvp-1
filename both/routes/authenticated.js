@@ -26,6 +26,6 @@ authenticatedRoutes.route( '/dashboard', {
 authenticatedRoutes.route( '/jotes', {
   name: 'jotes',
   action() {
-    BlazeLayout.render('default', { yield: 'jotes' } );
+    BlazeLayout.render('defaultJotes', { yield: 'jotes' } );
   }
 });
