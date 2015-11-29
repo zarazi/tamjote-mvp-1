@@ -15,8 +15,10 @@ Template.joteItem.events({
     score += correct?100:0;
 
     Session.set('_score', score);
-
     console.log(choiceNo, score);
+
+    template.$('.jote').addClass('animated bounceOutUp');
+    template.$('.jote').one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() { $(this).remove(); });
 
     return false;
   }
