@@ -5,3 +5,19 @@
 @import "components/login";
 
 body { padding-top: 70px; }
+
+.jote {
+  padding: 25px;
+  margin-top: 15px;
+  margin-bottom: 30px;
+
+  .question {
+    padding: 0 5px;
+    margin-bottom: 20px;
+  }
+
+  .btn.choice {
+    width: 150px;
+    margin: 10px 10px;
+  }
+}
