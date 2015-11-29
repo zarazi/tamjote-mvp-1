@@ -3,7 +3,8 @@ Meteor.publish( 'jotes', function() {
       { active: true },
       { fields: {
           question: 1,
-          choices: 1
+          choices: 1,
+          answers: 1
       }}
   );
 });
